@@ -19,6 +19,22 @@ Chat Messenger is a Java-based client-server chat application that enables real-
 - Socket connection handling
 - Simple and lightweight architecture
 - Console-based interaction
+- Log facility: every connection event and message is timestamped and written to a log file
+
+## Logging
+
+Both the server and client write a simple timestamped text log of their activity (connections, messages sent/received, and any errors) using the `Logger` class:
+
+- The server writes to `chatserver.log`
+- The client writes to `chatclient.log`
+
+Each line follows the format:
+
+```
+[yyyy-MM-dd HH:mm:ss] <event description>
+```
+
+Log files are created automatically (in the directory the program is run from) and new entries are appended on each run.
 
 ## Project Structure
 
@@ -27,7 +43,7 @@ Chat Messenger is a Java-based client-server chat application that enables real-
 ChatMessenger/
 ├── ChatClient.java
 ├── ChatServer.java
-└── Client.java
+└── Logger.java
 
 ```
 
